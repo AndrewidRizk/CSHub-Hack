@@ -2,7 +2,6 @@ from bs4 import BeautifulSoup
 import requests
 import mysql.connector
 
-
 month_dict = {'January': '01', 'February': '02', 'March': '03', 'April': '04', 'May':'05', 'June':'06',
                 'July': '07', 'August':'08', 'September':'09', 'October':'10', 'November':'11', 'December':'12'}
 calendar = requests.get('https://yorkinternational.yorku.ca/calendar').text
@@ -96,7 +95,7 @@ def events_york():
             except AttributeError:
                 pass
 
-            if addr == '' or 'zoom' in addr.lower() or 'online' in addr.lower():
+            if addr == '' or 'zoom' in addr.lower() or 'online' in addr.lower() or 'email' in addr.lower():
                 addr = 'York University'
 
             title = ''
