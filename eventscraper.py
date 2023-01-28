@@ -53,7 +53,7 @@ def populate_list(days, month, year):
             addr = 'York International'
 
             if event_title != 'N/A': 
-                event_list.append(f"{day_of_month}/{month_dict[month]}/{year} {event_title} {event_time} {addr}")
+                event_list.append(f"{day_of_month}/{month_dict[month]}/{year} | {event_title} | {event_time} | {addr}")
 
     return event_list
 
@@ -105,7 +105,9 @@ def events_york():
                 pass 
 
             if title != '':
-                event_list.append(f'{date_str} {title} {time} {addr}')
+                event_list.append(f'{date_str} | {title} | {time} | {addr}')
+
+    return event_list
 
 if __name__=="__main__":
     events_york()
