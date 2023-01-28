@@ -106,8 +106,6 @@ def events_york():
 
             if title != '':
                 event_list.append(f'{date_str} {title} {time} {addr}')
-                print(f"{date_str} {title} {time} {addr}")
-
 
 if __name__=="__main__":
     events_york()
