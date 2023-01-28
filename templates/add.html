@@ -2,46 +2,56 @@
 <html>
 <head>
   <style>
-          body {
-            background-image: url("/static/image1.jpg");
-            background-size: 2000px 1000px;
-            background-repeat: no-repeat;
-        } 
-  body {
-            background-color: black;
-        }
+    body {
+      background-image: url("/static/image1.jpg");
+      background-size: 2000px 1000px;
+      background-repeat: no-repeat;
+    } 
+    body {
+      background-color: black;
+    }
     /* Style for text boxes */
-        input[type=text] {
+    input[type=text] {
       width: 500px;
       height: 50px;
       font-size: 20px;
       text-align: center;
+      border-radius: 12px;
+      border: none;
     }
-    /* Style for the container box */
-.container {
-  border: 2px solid black;
-  width: 600px;
-  height: 550px;
-  margin: 0 auto;
-  text-align: center;
-  background-color: #F5F5DC; /* Cream white color */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+  /* Style for the container box */
+  .container {
+    border-radius: 25px;
+    width: 600px;
+    height: 550px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: rgb(255, 255, 255, 0.5); /* Cream white color */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: auto;
+  }
+
+  .logo {
+    width: 50%;
+  }
  /*Style for the button*/ 
-button {
-width: 250px;
-height: 50px;
-font-size: 20px;
-margin: 20px auto;
-display: block;
-}
+  button {
+    width: 250px;
+    height: 50px;
+    font-size: 20px;
+    margin: 20px auto;
+    display: block;
+    background-color: rgb(252, 102, 102);
+    border: none;
+    border-radius: 30px;
+  }
  Style for the form 
-form {
-padding: 20px;
-}
+  form {
+    padding: 20px;
+  }
 /* Style for the image box /
 .img-box {
 width: 300px; / Adjust as needed /
@@ -58,7 +68,7 @@ transform: translate(-50%, -50%); / Centers the image box */
 <body>
 <div class="container">
 <div class="img-box">
-   <img src="/static/yorkulogo.jpg" alt="image">
+   <img class='logo' src="/static/Logo_York_University.png" alt="image">
 </div>
   <form>
     <label for="title">Title:</label>
