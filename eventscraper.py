@@ -94,7 +94,7 @@ def events_york():
             except AttributeError:
                 pass
 
-            if addr == '' or 'zoom' in addr.lower() or 'online' in addr.lower():
+            if addr == '' or 'zoom' in addr.lower() or 'online' in addr.lower() or 'email' in addr.lower():
                 addr = 'York University'
 
             title = ''
@@ -106,6 +106,7 @@ def events_york():
 
             if title != '':
                 event_list.append(f'{date_str} | {title} | {time} | {addr}')
+                print(addr)
 
     return event_list
 
