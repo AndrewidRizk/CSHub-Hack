@@ -53,7 +53,7 @@ def populate_list(days, month, year):
             addr = 'York International'
 
             if event_title != 'N/A': 
-                event_list.append(f"{day_of_month}/{month_dict[month]}/{year} | {event_title} | {event_time} | {addr}")
+                event_list.append(f"{year}-{month_dict[month]}-{day_of_month} | {event_title} | {event_time} | {addr}")
 
     return event_list
 
@@ -71,7 +71,7 @@ def events_york():
         year = date[:4]
         month = date[4:6]
         date = date[6:8]
-        date_str = f"{date}/{month}/{year}"
+        date_str = f"{year}-{month}-{date}"
 
         events = day.find_all('article', class_='mec-event-article')
 
