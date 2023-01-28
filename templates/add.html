@@ -38,7 +38,7 @@
     width: 50%;
   }
  /*Style for the button*/ 
-  button {
+  /* button {
     width: 250px;
     height: 50px;
     font-size: 20px;
@@ -47,7 +47,26 @@
     background-color: rgb(252, 102, 102);
     border: none;
     border-radius: 30px;
-  }
+  } */
+  /* Style for the button */
+button {
+  width: 250px;
+  height: 50px;
+  font-size: 20px;
+  margin: 20px auto;
+  display: block;
+  background-color: rgb(252, 102, 102);
+  border: none;
+  border-radius: 30px;
+}
+
+/* Add this new code to change the button appearance on hover */
+button:hover {
+  background-color: rgb(232, 52, 52); /* darker red */
+  cursor: pointer; /* change cursor to pointer */
+  transform: scale(1.1); /* increase button size slightly */
+}
+
  Style for the form 
   form {
     padding: 20px;
