@@ -122,12 +122,20 @@ def create_one_List():
     for z in range(len(list3)):
         list4.append(z)
         return list4
-def get_Year(str):
+def get_date(str):
     year = str[0,9]
     return year
+def get_title(str):
+    str1 = str[11, -1]
+    return str1.split("|")[0]
+def get_time(str):
+    return str.split("|")[1]
+def get_location(str):
+    return str.split("|")[2]
 
 
-def create_table():
+
+def create_table(list_of_strings):
     # Connect to the database
     mydb = mysql.connector.connect(
         host="localhost",
@@ -136,14 +144,28 @@ def create_table():
         database="events"
     )
 
-    mycursor = mydb.cursor()
+    # Create a cursor
+    cursor = mydb.cursor()
 
     # Create the table
-    sql = "CREATE TABLE table_name (date DATE, time TIME, name VARCHAR(255), location VARCHAR(255))"
-    mycursor.execute(sql)
+    cursor.execute("CREATE TABLE events (date DATE, title VARCHAR(255), time VARCHAR(255), location VARCHAR(255))")
+    
+    # Iterate through the list of strings
+    for event_string in list_of_strings:
+        # Extract the date, title, time, and location from the string
+        date = get_date(event_string)
+        title = get_title(event_string)
+        time = get_time(event_string)
+        location = get_location(event_string)
+        
+        # Insert the data into the table
+        cursor.execute(f"INSERT INTO events (date, title, time, location) VALUES ('{date}', '{title}', '{time}', '{location}')")
+
+    # Commit the changes to the database
+    mydb.commit()
 
     # Close the cursor and connection
-    mycursor.close()
+    cursor.close()
     mydb.close()
 
 if __name__=="__main__":
