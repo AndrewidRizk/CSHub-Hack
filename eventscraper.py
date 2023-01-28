@@ -1,5 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
+import mysql.connector
+
 
 month_dict = {'January': '01', 'February': '02', 'March': '03', 'April': '04', 'May':'05', 'June':'06',
                 'July': '07', 'August':'08', 'September':'09', 'October':'10', 'November':'11', 'December':'12'}
@@ -53,7 +55,7 @@ def populate_list(days, month, year):
             addr = 'York International'
 
             if event_title != 'N/A': 
-                event_list.append(f"{day_of_month}/{month_dict[month]}/{year} {event_title} {event_time} {addr}")
+                event_list.append(f"{day_of_month}/{month_dict[month]}/{year} | {event_title} | {event_time} | {addr}")
 
     return event_list
 
@@ -94,7 +96,7 @@ def events_york():
             except AttributeError:
                 pass
 
-            if addr == '':
+            if addr == '' or 'zoom' in addr.lower() or 'online' in addr.lower():
                 addr = 'York University'
 
             title = ''
@@ -105,9 +107,30 @@ def events_york():
                 pass 
 
             if title != '':
-                event_list.append(f'{date_str} {title} {time} {addr}')
-                print(f"{date_str} {title} {time} {addr}")
+                event_list.append(f'{date_str} | {title} | {time} | {addr}')
 
+    return event_list
+#-----------------------------------------------------SQL------------------------------------------------------------------
+def create_one_List():
+    
+def create_table():
+    # Connect to the database
+    mydb = mysql.connector.connect(
+        host="hostname",
+        user="username",
+        password="password",
+        database="database_name"
+    )
+
+    mycursor = mydb.cursor()
+
+    # Create the table
+    sql = "CREATE TABLE table_name (date DATE, time TIME, name VARCHAR(255), location VARCHAR(255))"
+    mycursor.execute(sql)
+
+    # Close the cursor and connection
+    mycursor.close()
+    mydb.close()
 
 if __name__=="__main__":
     events_york()
