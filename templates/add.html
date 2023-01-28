@@ -2,6 +2,10 @@
 <html>
 <head>
   <style>
+    * {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
     body {
       background-image: url("/static/image1.jpg");
       background-size: 2000px 1000px;
@@ -12,12 +16,16 @@
     }
     /* Style for text boxes */
     input[type=text] {
-      width: 500px;
+      width: 400px;
       height: 50px;
-      font-size: 20px;
-      text-align: center;
-      border-radius: 12px;
       border: none;
+      border-bottom: 1px solid #fff;
+      background: transparent;
+      outline: none;
+      height: 40px;
+      color: black;
+      font-size: 16px;
+      margin-bottom: 20px;
     }
   /* Style for the container box */
   .container {
@@ -62,7 +70,7 @@ button {
 
 /* Add this new code to change the button appearance on hover */
 button:hover {
-  background-color: rgb(232, 52, 52); /* darker red */
+  background-color: #ec5454; /* darker red */
   cursor: pointer; /* change cursor to pointer */
   transform: scale(1.1); /* increase button size slightly */
 }
@@ -90,15 +98,12 @@ transform: translate(-50%, -50%); / Centers the image box */
    <img class='logo' src="/static/Logo_York_University.png" alt="image">
 </div>
   <form>
-    <label for="title">Title:</label>
     <br>
-    <input type="text" id="title" name="title"><br><br>
-    <label for="location">Location:</label>
+    <input type="text" id="title" name="title" placeholder="Title"><br><br>
     <br>
-    <input type="text" id="location" name="location"><br><br>
-    <label for="date">Date:</label>
+    <input type="text" id="location" name="location" placeholder="Location"><br><br>
     <br>
-    <input type="text" id="date" name="date"><br><br>
+    <input type="text" id="date" name="date" placeholder="Date"><br><br>
     <button type="button" onclick="register()">Register</button>
   </form>
 </div>
