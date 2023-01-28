@@ -11,7 +11,7 @@ async function initialize() {
     })
 
     geocoder = new google.maps.Geocoder(); 
-    geocode({ address: "Taj Mall" })
+    geocode({ address: "York International" })
 }
 
 function geocode(request) {
