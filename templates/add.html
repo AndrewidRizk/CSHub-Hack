@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style> 
+    /* Style for text boxes */
+    input[type=text] {
+      width: 500px;
+      height: 50px;
+      font-size: 20px;
+      text-align: center;
+    }
+    /* Style for the container box */
+.container {
+  border: 2px solid black;
+  width: 600px;
+  height: 550px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Style for the button */
+button {
+  width: 250px;
+  height: 50px;
+  font-size: 20px;
+  margin: 20px auto;
+  display: block;
+}
+/* Style for the form */
+form {
+    padding: 20px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <form>
+    <label for="title">Title:</label>
+    <br>
+    <input type="text" id="title" name="title"><br><br>
+    <label for="description">Description:</label>
+    <br>
+    <input type="text" id="description" name="description"><br><br>
+    <label for="location">Location:</label>
+    <br>
+    <input type="text" id="location" name="location"><br><br>
+    <label for="date">Date:</label>
+    <br>
+    <input type="text" id="date" name="date"><br><br>
+    <button type="button" onclick="register()">Register</button>
+  </form>
+</div>
+<script>
+  function register() {
+    // Code to execute when the "register" button is clicked goes here
+    var title = document.getElementById("title").value;
+    var description = document.getElementById("description").value;
+    var location = document.getElementById("location").value;
+    var date = document.getElementById("date").value;
+    alert("Title: " + title + "\nDescription: " + description + "\nLocation: " + location + "\nDate: " + date);
+  }
+</script>
+</body>
+</html>

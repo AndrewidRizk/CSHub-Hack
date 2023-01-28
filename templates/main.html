@@ -3,13 +3,23 @@
     <head>
         <meta charset="UTF-8">
         <title>YorkU Events</title>
+        <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXAbF5qKwgTOimUE05z41dQzmrNku4ypo&libraries=places"></script>
     </head>
 
     <body>
 
         <h1>YorkU Events</h1>
-        <button id = "add-event">ADD EVENT</button>
+        <form action ="/login" method="POST">
+            <button id = "add-event">ADD EVENT</button>
+        </form>
+        <div id="map" style="height: 500px; width: 800px"></div>
     </body>
+
+
+    <script src = "map.js" ></script>
+
+    
 
 
 </html>
