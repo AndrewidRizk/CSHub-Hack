@@ -8,18 +8,146 @@
     </head>
 
     <body>
-
         <h1>YorkU Events</h1>
         <form action="/login" method="get">
             <input type="submit" value="Login">
         </form>
-        <div id="map" style="height: 500px; width: 800px"></div>
+        <div class="scroll-bg">
+            <div class = "scroll-div">
+                
+                <button class = "scroll-object" onclick="updateLocation(1)" id="button1">
+                    egypt
+                </button>
+                <br>
+                <button class = "scroll-object" onclick="updateLocation(2)" id="button2">
+                      Fireside Lounge, 150 Centre for Film and Theatre
+                </button>
+                <br>
+                <button class = "scroll-object" onclick="updateLocation(3)" id="button3">
+                   tokyo
+                </button>
+                <br>
+                <button class = "scroll-object" onclick="updateLocation(4)" id="button4">
+                    india
+                </button>
+                <br>
+                <button class = "scroll-object" onclick="updateLocation(4)" id="button5">
+                    texas
+                </button>
+                <br>
+                <button class = "scroll-object" onclick="updateLocation(6)" id="button6">
+                    jordan
+                </button>
+                <br>
+                <button class = "scroll-object" onclick="updateLocation(7)" id="button7">
+                    germany
+                </button>
+                <br>
+                <button class = "scroll-object" onclick="updateLocation(8)" id="button8">
+                    moscow
+                </button>
+                <br>
+                <button class = "scroll-object" onclick="updateLocation(9)" id="button9">
+                    bangkok
+                </button>
+                <br>
+                <button class = "scroll-object" onclick="updateLocation(10)" id="button10">
+                    singapore
+                </button>
+                <br>
+                <button class = "scroll-object" onclick="updateLocation(11)" id="button11">
+                    indonesia
+                </button>
+                <br>
+                <button class = "scroll-object" onclick="updateLocation(12)" id="button12">
+                    sudan
+                </button>
+                <br>
+                <button class = "scroll-object" onclick="updateLocation(13)" id="button13">
+                    67/90/2009  <br> game night <br> south africa 
+                </button>
+            </div>
+        </div>
+        <div id="map" style="height: 500px; width: 700px; float:right;"></div>
     </body>
 
 
-    <script src = "map.js" ></script>
+    <script>
+        var map;
+        var service;
+        var infowindow;
 
-    
+        function updateLocation(number){
+            var elem = document.getElementById('button' + number);
+            var txt = elem.textContent 
+            //manipulate the text so that u have a variable with JUST the location and pass it into the geocode function
+            geocode({ address: txt })
+        }
 
+        async function initialize() {
+            var pyrmont = new google.maps.LatLng(-33.8665433, 151.1956316);
+
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: pyrmont,
+                zoom: 18
+            })
+
+            geocoder = new google.maps.Geocoder(); 
+            //default location when u first load the screen
+            var location ="York Univeristu" 
+            geocode({ address: location })
+        }
+
+        function geocode(request) {
+            var coords = [];
+            geocoder
+            .geocode(request)
+            .then((result) => {
+                const { results } = result;
+        
+                map.setCenter(results[0].geometry.location);
+                coords[0] = results[0].geometry.location.lat();
+                coords[1] = results[0].geometry.location.lng();
+                console.log(coords)
+                marker1 = new google.maps.Marker({
+                    map,
+                    draggable: false,
+                    position: { lat: coords[0], lng: coords[1] },
+                });
+                
+            })
+            .catch((e) => {
+                alert("Geocode was not successful for the following reason: " + e);
+            });
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize)
+</script>
 
 </html>
+
+<style>
+    .scrol-bg{
+        background: #ec5454;
+        width: 400px;
+        margin: 10% auto;
+    }
+    .scroll-div{
+        background: lightgray;
+        width: 400px;
+        height: 700px; 
+        overflow: hidden;       
+        overflow-y: scroll;
+    }
+    .scroll-object{
+        background-color: #ec5454; 
+        border: none;
+        color: rgb(13, 1, 1);
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        width: 400px;
+    }
+</style>
