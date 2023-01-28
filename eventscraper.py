@@ -112,14 +112,29 @@ def events_york():
     return event_list
 #-----------------------------------------------------SQL------------------------------------------------------------------
 def create_one_List():
-    
+    list1 = events_york()
+    list2 = get_current_month_events()
+    list3 =  get_next_month_events()
+    list4 = []
+    for i in range(len(list1)):
+        list4.append(i)
+    for j in range(len(list2)):
+        list4.append(j)
+    for z in range(len(list3)):
+        list4.append(z)
+        return list4
+def get_Year(str):
+    year = str[0,9]
+    return year
+
+
 def create_table():
     # Connect to the database
     mydb = mysql.connector.connect(
-        host="hostname",
-        user="username",
-        password="password",
-        database="database_name"
+        host="localhost",
+        user="root",
+        password="Androwmaged3030",
+        database="events"
     )
 
     mycursor = mydb.cursor()
