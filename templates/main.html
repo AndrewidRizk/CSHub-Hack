@@ -8,10 +8,16 @@
     </head>
 
     <body>
-        <h1>YorkU Events</h1>
-        <form action="/login" method="get">
-            <input type="submit" value="Login">
-        </form>
+        <div class="navbar">
+            <a href="#">Home</a>
+            <div class="navbar-right">
+              <a href="#">Log In</a>
+              <a href="#">Sign Up</a>
+            </div>
+          </div>
+
+        <br/>
+          
         <div class="scroll-bg">
             <div class = "scroll-div">
                 
@@ -68,7 +74,7 @@
                 </button>
             </div>
         </div>
-        <div id="map" style="height: 500px; width: 700px; float:right;"></div>
+        <div id="map" style="height: 700px; width: 900px; float:right;"></div>
     </body>
 
 
@@ -127,10 +133,25 @@
 </html>
 
 <style>
-    .scrol-bg{
+    * {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .sign-up {
+        right: 0;
+        position: absolute;
+        margin-left: 500px;
+    }
+
+    .log-in {
+        right: 0px;
+        position: absolute;
+    }
+
+    .scroll-bg{
         background: #ec5454;
-        width: 400px;
-        margin: 10% auto;
+        width: 400px;   
+        display: inline-block;
     }
     .scroll-div{
         background: lightgray;
@@ -149,5 +170,35 @@
         display: inline-block;
         font-size: 16px;
         width: 400px;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        background-color: #18191d;
+        top: 0;
+    }
+
+    .navbar-right {
+        display: flex;
+    }
+
+    .navbar a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    .navbar a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    .navbar a.active {
+        background-color: #ec5454;
+        color: white;
     }
 </style>
