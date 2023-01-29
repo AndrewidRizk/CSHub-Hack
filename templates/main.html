@@ -24,55 +24,55 @@
                 <div class = "scroll-div">
                     
                     <button class = "scroll-object" onclick="updateLocation(1)" id="button1">
-                        egypt
+                        (Preparing for Career Fair Success) Job Search and Networking Strategies webinar| 2023-01-13| York University| 10:00am
                     </button>
                     <br>
                     <button class = "scroll-object" onclick="updateLocation(2)" id="button2">
-                        Fireside Lounge, 150 Centre for Film and Theatre
+                        (Preparing for Career Fair Success) Resumé & Cover Letter Writing webinar| 2023-01-10| York University| 10:00am  
                     </button>
                     <br>
                     <button class = "scroll-object" onclick="updateLocation(3)" id="button3">
-                    tokyo
+                        2SLGBTQIA+ Support Group| 2023-01-31| York University| 3:00pm
                     </button>
                     <br>
                     <button class = "scroll-object" onclick="updateLocation(4)" id="button4">
-                        india
+                        A conversation with journalist Oakland Ross| 2023-02-02| Glendon college @ 2275 Bayview Ave North York ON M4N 3M6 Canada| 5:00pm 
                     </button>
                     <br>
                     <button class = "scroll-object" onclick="updateLocation(4)" id="button5">
-                        texas
+                        A Student’s Guide to Physical Activity| 2023-02-02| York University| 10:00am 
                     </button>
                     <br>
                     <button class = "scroll-object" onclick="updateLocation(6)" id="button6">
-                        jordan
+                        Accessing and Responding to Accommodations| 2023-01-10| York University| 1:00pm 
                     </button>
                     <br>
                     <button class = "scroll-object" onclick="updateLocation(7)" id="button7">
-                        germany
+                        Analyze your Assignment| 2023-01-19| York University| 10:30am 
                     </button>
                     <br>
                     <button class = "scroll-object" onclick="updateLocation(8)" id="button8">
-                        moscow
+                        Applying for PGWP (in-person)| 2023-01-18| York International| 10:30 am 
                     </button>
                     <br>
                     <button class = "scroll-object" onclick="updateLocation(9)" id="button9">
-                        bangkok
+                        Applying for PGWP (virtual)| 2023-01-16| York International| 1:00 pm
                     </button>
                     <br>
                     <button class = "scroll-object" onclick="updateLocation(10)" id="button10">
-                        singapore
+                        Avie Bennett Historica Lecture| 2023-01-18| York University| 3:30pm 
                     </button>
                     <br>
                     <button class = "scroll-object" onclick="updateLocation(11)" id="button11">
-                        indonesia
+                        Bell Let’s Talk Day (BLTD) – Overcoming Burnout| 2023-01-25| York University| 10:00am 
                     </button>
                     <br>
                     <button class = "scroll-object" onclick="updateLocation(12)" id="button12">
-                        sudan
+                        Café Historique – Lutte nationaliste camerounaise au milieu des années 1950 : une approche féministe noire décoloniale| 2023-02-01| Glendon College| 10:30am
                     </button>
                     <br>
                     <button class = "scroll-object" onclick="updateLocation(13)" id="button13">
-                        67/90/2009  <br> game night <br> south africa 
+                        Canada and China: A Fifty-Year Journey| 2023-01-18| 519 Kaneff Tower @ 4700 Keele St, Toronto, ON M3J 1P3, Canada| 3:00pm  
                     </button>
                 </div>
             </div>
@@ -88,9 +88,10 @@
 
         function updateLocation(number){
             var elem = document.getElementById('button' + number);
-            var txt = elem.textContent 
+            var txt = elem.textContent.split("|")
+
             //manipulate the text so that u have a variable with JUST the location and pass it into the geocode function
-            geocode({ address: txt })
+            geocode({ address: txt[2] + "Ontario" })
         }
 
         async function initialize() {
@@ -103,7 +104,7 @@
 
             geocoder = new google.maps.Geocoder(); 
             //default location when u first load the screen
-            var location ="Vari Hall" 
+            var location ="York University, Ontario" 
             geocode({ address: location })
         }
 
