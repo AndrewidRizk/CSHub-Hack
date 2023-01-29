@@ -2,6 +2,7 @@ from string import punctuation
 from flask import Flask, render_template, request, url_for, redirect, session
 import requests
 import mysql.connector
+import eventscraper
 
 #-----------------------------------------------Flask----------------------------------------------
 
