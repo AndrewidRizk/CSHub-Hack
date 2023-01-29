@@ -12,7 +12,7 @@
             <a href="#">Home</a>
             <div class="navbar-right">
                 <form action="/login" method="get">
-                    <input type="submit" value="Add Event">
+                    <input class="addevent" type="submit" value="Add Event">
                 </form>
             </div>
           </div>
@@ -103,7 +103,7 @@
 
             geocoder = new google.maps.Geocoder(); 
             //default location when u first load the screen
-            var location ="York Univeristu" 
+            var location ="Vari Hall" 
             geocode({ address: location })
         }
 
@@ -166,14 +166,14 @@
         background: #ec5454;
         width: 400px;   
         display: inline-block;
-        margin: 10px;
+        margin-right: 10px;
     }
+
     .scroll-div{
         background: lightgray;
         width: 400px;
         height: 600px; 
-        overflow: hidden;       
-        overflow-y: scroll;
+        overflow: auto;       
     }
     .scroll-object{
         background-color: #ec5454; 
@@ -215,5 +215,14 @@
     .navbar a.active {
         background-color: #ec5454;
         color: white;
+    }
+
+    .addevent {
+        background: transparent;
+        color:white;
+        border: none;
+        margin-top: 12px;
+        margin-right: 6px;
+        font-size: 16px;
     }
 </style>
