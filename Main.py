@@ -213,7 +213,7 @@ def add(username,password):
     host="localhost",
     user="root",
     password="Androwmaged3030",
-    database="MovieRecommender"
+    database="***"
     )
     mycursor = mydb.cursor()
     sql = "INSERT INTO user (Username, Password, Movies) VALUES (%s, %s, %s)"
@@ -235,7 +235,7 @@ def ifExist(username):
     host="localhost",
     user="root",
     password="Androwmaged3030",
-    database="MovieRecommender"
+    database="***"
     )
 
     # Create a cursor object
@@ -257,7 +257,7 @@ def if_Password_is_right(username, password):
         host="localhost",
         user="root",
         password="Androwmaged3030",
-        database="MovieRecommender"
+        database="***"
         )
     try:
         with mydb.cursor() as cursor:
@@ -282,7 +282,7 @@ def add_movie(username, movie):
         host="localhost",
         user="root",
         password="Androwmaged3030",
-        database="MovieRecommender"
+        database="***"
         )
     cursor = cnx.cursor()
     query = "SELECT Movies FROM user WHERE username = '"+username+"'"
@@ -307,7 +307,7 @@ def Movie_list(username):
     cnx = mysql.connector.connect(
         host="localhost",
         user="root",
-        password="Androwmaged3030",
+        password="***",
         database="MovieRecommender"
         )
     cursor = cnx.cursor()
